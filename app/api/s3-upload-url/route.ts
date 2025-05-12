@@ -10,6 +10,7 @@ export async function GET(req: NextRequest) {
   const url = new URL(req.url);
 
   const filename = url.searchParams.get("filename");
+  const mimetype = url.searchParams.get("mimetype");
 
   if (!filename) {
     return NextResponse.json({ error: "Filename Missing" }, { status: 400 });
@@ -17,7 +18,7 @@ export async function GET(req: NextRequest) {
 
   try {
     //get the file extention like .txt/.pdf/.docx etc etc
-    const fileExt = filename.split(".")[1];
+    const [name, fileExt] = filename.split(".");
     const random = randomUUID();
     // console.log(random);
 
@@ -26,7 +27,7 @@ export async function GET(req: NextRequest) {
     //TODO:
     //1. When introduce auth, create a foder for that user specifically
     //right now we are just uploading everything into the upload folder
-    const key = `upload/${random}.${fileExt}`;
+    const key = `upload/${name}.${fileExt}`;
 
     //creates the upload command
     const upload = new PutObjectCommand({
