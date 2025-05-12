@@ -47,7 +47,7 @@ export default function FileForm() {
       //upload to s3
       const res = await axios.put(presigned, file, {
         headers: {
-          ContentType: "application/octet-stream", // Important: set the correct content type
+          ContentType: file.type, // Important: set the correct content type
         },
       });
 
