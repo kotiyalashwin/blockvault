@@ -18,7 +18,7 @@ export default async function () {
                 <form
                   action={async () => {
                     "use server";
-                    await signIn("google", { redirectTo: "/profile" });
+                    await signIn("google", { redirectTo: "/upload" });
                   }}
                 >
                   <Button className="bg-orange-400 text-white">
