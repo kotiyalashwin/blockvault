@@ -121,13 +121,23 @@
   }
 }
 
-.hero-gradient {
+/* .hero-gradient {
   background: #000000;
   background: radial-gradient(
     circle,
     rgba(0, 0, 0, 1) 0%,
     rgba(13, 8, 8, 0.37) 83%,
     rgba(237, 99, 0, 1) 99%
+  );
+} */
+
+.hero-gradient {
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(13, 8, 8, 0.37) 83%,
+    rgba(237, 99, 0, 1) 95%,
+    transparent 100%
   );
 }
 

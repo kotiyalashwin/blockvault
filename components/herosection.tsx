@@ -2,14 +2,16 @@
 import { motion } from "motion/react";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
+import { Lock } from "lucide-react";
 export const HeroSection = () => {
   const router = useRouter();
   return (
     <div>
-      {/* <div className="absolute w-full h-screen inset-0 opacity-35 hero-bg Z-0 " />
-      <div className="absolute inset-0 h-screen w-full hero-gradient opacity-75 Z-10 " /> */}
-
       <div className="relative w-full h-screen flex items-center justify-center">
+        <div className="absolute w-full inset-0 flex items-center justify-center opacity-10 text-neutral-500  pointer-events-none">
+          <Lock absoluteStrokeWidth size={800} />{" "}
+          {/* Use the Lucide Lock icon */}
+        </div>
         <div className="max-w-7xl h-screen flex flex-col justify-evenly ">
           <motion.div
             initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
@@ -42,7 +44,7 @@ export const HeroSection = () => {
                 router.push("/upload");
               }}
               variant={"outline"}
-              className="mt-4 text-orange-400 text-lg animate-bounce repeat-2"
+              className="mt-4 text-orange-400 text-lg repeat-2"
             >
               Secure now
             </Button>

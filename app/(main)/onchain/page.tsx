@@ -14,10 +14,7 @@ import {
   DialogFooter,
   DialogClose,
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { DialogDescription, DialogTitle } from "@radix-ui/react-dialog";
-import { Copy } from "lucide-react";
 
 export default async function Page({
   searchParams,
@@ -34,7 +31,13 @@ export default async function Page({
             <Card>
               <CardHeader className="text-center">
                 <CardTitle>Sign your document</CardTitle>
-                <CardDescription>Your document : {url}</CardDescription>
+                <CardDescription>
+                  Your document :{" "}
+                  <a
+                    className="hover:underline"
+                    href={`https://${url}`}
+                  >{`https://${url}`}</a>
+                </CardDescription>
                 <CardContent>
                   <Dialog>
                     <DialogTrigger className="mt-4" asChild>
