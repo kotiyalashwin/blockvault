@@ -7,12 +7,15 @@ import { Card, CardHeader, CardTitle } from "./ui/card";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 export default function FileForm() {
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState(false);
   const [presigned, setPresigned] = useState<string>("");
   const filRef = useRef<HTMLInputElement | null>(null);
+  const [redirectURL, setRedirectURL] = useState("");
+  const router = useRouter();
 
   const handleFileUpload = async (e: FormEvent) => {
     e.preventDefault();
@@ -29,7 +32,7 @@ export default function FileForm() {
         console.error("File size exceeds 5MB");
         return;
       }
-      const appURL = process.env.APP_BASE_API as string;
+      // const appURL = process.env.APP_BASE_API as string;
 
       //get presigned url
       const preSigned = await axios.get(
@@ -50,7 +53,10 @@ export default function FileForm() {
       });
 
       if (res.status === 200) {
+        const cdn = process.env.NEXT_PUBLIC_CDN!;
         toast.success("Uploaded Successfully");
+        // console.log(`${cdn}/${file.name}`);
+        setRedirectURL(`${cdn}/${file.name}`);
       } else {
         toast.error("Try again.");
         setError(true);
@@ -82,7 +88,17 @@ export default function FileForm() {
           <Button disabled={isPending} type="submit">
             Upload
           </Button>
-          {!error && presigned && <Button>Put on Chain</Button>}
+          {!error && presigned && redirectURL && (
+            <Button
+              onClick={() => {
+                router.push(
+                  `/onchain?fileurl=${encodeURIComponent(redirectURL)}`
+                );
+              }}
+            >
+              Put on Chain
+            </Button>
+          )}
         </div>
         {error && <p className="text-red-400">Some Error Occured</p>}
       </form>
