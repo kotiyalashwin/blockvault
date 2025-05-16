@@ -13,7 +13,7 @@ export const HeroSection = () => {
           {/* Use the Lucide Lock icon */}
         </div>
         <div className="max-w-7xl h-screen flex flex-col justify-evenly ">
-          <motion.div
+          {/* <motion.div
             initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
             animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
             transition={{ delay: 1 }}
@@ -24,7 +24,7 @@ export const HeroSection = () => {
               <p>About</p>
               <p>Info</p>
             </div>
-          </motion.div>
+          </motion.div> */}
           <motion.div
             initial={{ filter: "blur(10px)" }}
             animate={{ filter: "blur(0px)" }}

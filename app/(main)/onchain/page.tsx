@@ -14,14 +14,21 @@ import {
   DialogFooter,
   DialogClose,
 } from "@/components/ui/dialog";
+import Wallet from "@/components/Wallet";
+
 import { DialogDescription, DialogTitle } from "@radix-ui/react-dialog";
+import { notFound } from "next/navigation";
 
 export default async function Page({
   searchParams,
 }: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
   const url = (await searchParams).fileurl;
+  if (!url) {
+    notFound();
+  }
+  // console.log(hash);
   return (
     <div>
       <div className="absolute w-full h-screen inset-0 opacity-35 hero-bg Z-0 " />
@@ -73,7 +80,7 @@ export default async function Page({
                       </DialogFooter>
                     </DialogContent>
                   </Dialog>
-                  <div>wallet</div>
+                  <Wallet url={url} />
                 </CardContent>
               </CardHeader>
             </Card>

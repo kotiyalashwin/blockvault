@@ -1,4 +1,4 @@
-// "use server";
+"use server";
 
 import { createHash } from "crypto";
 
@@ -21,4 +21,4 @@ export const GenHash = async (fileUrl: string): Promise<string> => {
   }
 };
 
-GenHash("d34b5soyv42wkv.cloudfront.net/Js-Certificate.pdf");
+// GenHash("d34b5soyv42wkv.cloudfront.net/Js-Certificate.pdf");

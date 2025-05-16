@@ -6,7 +6,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     Google({
       profile(raw) {
-        console.log(raw);
+        // console.log(raw);
         return {
           email: raw.email,
           name: raw.name,

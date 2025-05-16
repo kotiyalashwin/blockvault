@@ -56,7 +56,7 @@ export default function WorkFlow() {
             <span className="underline underline-offset-2 decoration-orange-400">
               TransactionHash
             </span>{" "}
-            is assigned to you document. Transaction can be viewed on{" "}
+            is assigned to your document. Transaction can be viewed on{" "}
             <a href="https://explorer.solana.com" className="text-orange-400">
               Solana Explorer
             </a>
