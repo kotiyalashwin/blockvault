@@ -46,22 +46,21 @@ BlockVault is a full-stack decentralized application built to explore Solana blo
    cd blockvault
    ```
 
-   2.Install dependencies:
+2.Install dependencies:
 
 ```bash
 npm install
 ```
 
-    3.Environment variables:
+3.Environment variables:
 
     ```bash
-      AWS_S3_BUCKET=your-s3-bucket-name
-      AWS_ACCESS_KEY_ID=your-access-key
-      AWS_SECRET_ACCESS_KEY=your-secret-key
-      AWS_REGION=your-region
-      DATABASE_URL=your-database-connection-string
-      NEXT_PUBLIC_SOLANA_NETWORK=devnet
-
+    AWS_S3_BUCKET=your-s3-bucket-name
+    AWS_ACCESS_KEY_ID=your-access-key
+    AWS_SECRET_ACCESS_KEY=your-secret-key
+    AWS_REGION=your-region
+    DATABASE_URL=your-database-connection-string
+    NEXT_PUBLIC_SOLANA_NETWORK=devnet
     ```
 
     4.Run Migrations
@@ -102,7 +101,3 @@ npm install
 -Returns the transaction signature (txHash) as proof of anchoring
 
 -This design leverages Solana's Memo Program, which avoids writing custom on-chain programs while still providing verifiable on-chain data storage.
-
-```
-
-```
