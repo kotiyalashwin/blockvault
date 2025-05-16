@@ -61,12 +61,10 @@ npm install
     DATABASE_URL=your-database-connection-string
     NEXT_PUBLIC_SOLANA_NETWORK=devnet
 
+4.Run Migrations
 
-    4.Run Migrations
-
-    5.Start Locally:
-
-      npm run dev
+5.Start Locally:
+npm run dev
 
 ---
 
