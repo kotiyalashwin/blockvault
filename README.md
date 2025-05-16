@@ -54,21 +54,19 @@ npm install
 
 3.Environment variables:
 
-    ```bash
     AWS_S3_BUCKET=your-s3-bucket-name
     AWS_ACCESS_KEY_ID=your-access-key
     AWS_SECRET_ACCESS_KEY=your-secret-key
     AWS_REGION=your-region
     DATABASE_URL=your-database-connection-string
     NEXT_PUBLIC_SOLANA_NETWORK=devnet
-    ```
+
 
     4.Run Migrations
 
-    5.Start Locally
-      ```bash
+    5.Start Locally:
+
       npm run dev
-      ```
 
 ---
 
