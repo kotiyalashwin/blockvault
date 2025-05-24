@@ -18,7 +18,7 @@ BlockVault is a full-stack decentralized application built to explore Solana blo
 ## Tech Stack
 
 - **Frontend:** Next.js (App Router), React, Tailwind CSS
-- **Backend:** Next.js API routes, Prisma ORM, PostgreSQL (or your preferred database)
+- **Backend:** Next.js API routes, Prisma ORM, PostgreSQL 
 - **Storage:** AWS S3 for file uploads
 - **Blockchain:** Solana Web3.js, @solana/wallet-adapter packages
 - **Authentication:** Wallet-based authentication via wallet-adapter-react
@@ -30,10 +30,10 @@ BlockVault is a full-stack decentralized application built to explore Solana blo
 ### Prerequisites
 
 - Node.js >=16.x
-- A Solana wallet (Phantom recommended)
+- A Solana wallet 
 - AWS account with an S3 bucket configured
 - PostgreSQL or compatible database
-- (Optional) Solana CLI tools for devnet/localnet testing
+-  Solana CLI tools for devnet/localnet testing
 
 ---
 
