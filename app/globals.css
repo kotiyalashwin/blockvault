@@ -119,6 +119,13 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .font-outline-2 {
+    -webkit-text-stroke: 2px oklch(75% 0.183 55.934);
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 4px orange;
+  }
 }
 
 /* .hero-gradient {
@@ -168,4 +175,13 @@
   color: white;
   outline: none;
   box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.6);
+}
+
+.p-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* semi-transparent background */
+  border-radius: 0.5rem; /* optional */
+  z-index: -1;
 }

@@ -12,7 +12,7 @@ export const HeroSection = () => {
           <Lock absoluteStrokeWidth size={800} />{" "}
           {/* Use the Lucide Lock icon */}
         </div>
-        <div className="max-w-7xl h-screen flex flex-col justify-evenly ">
+        <div className="max-w-7xl h-screen flex flex-col justify-center ">
           {/* <motion.div
             initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
             animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
@@ -29,7 +29,7 @@ export const HeroSection = () => {
             initial={{ filter: "blur(10px)" }}
             animate={{ filter: "blur(0px)" }}
             transition={{ ease: "easeIn", duration: 0.25 }}
-            className="container h-full flex flex-col items-center justify-center"
+            className="h-full flex flex-col items-center justify-center gap-8"
           >
             <h1 className="text-neutral-400 text-center ">#securedocs</h1>
             <h1 className="text-5xl text-center tracking-widest">
