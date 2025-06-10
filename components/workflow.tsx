@@ -6,27 +6,27 @@ const workingCards = [
     title: "Upload Your Document",
     description: "Securely upload PDFs or other files",
     flex: "start",
-    delay: 1,
+    delay: 0.5,
   },
   {
     title: "Anchor to the Blockchain",
     description:
       "A unique hash of your document is generated and anchored to the Solana blockchain, creating an immutable record.",
     flex: "end",
-    delay: 1.5,
+    delay: 1,
   },
   {
     title: "Receive a Verification Certificate",
     description:
       "Get a timestamped certificate containing the blockchain transaction ID—your proof of authenticity.",
     flex: "start",
-    delay: 2,
+    delay: 1.5,
   },
 ];
 
 export const Workflow = () => {
   return (
-    <div className="h-screen flex overflow-hidden justify-center  pt-10 space-y-8  drop-shadow-2xl drop-shadow-orange-400 ">
+    <div className="min-h-screen flex overflow-hidden justify-center  pt-10 space-y-8  drop-shadow-2xl drop-shadow-orange-400 ">
       <div className="w-full max-w-7xl ">
         <div className="flex flex-col min-h-screen justify-start ">
           <h1 className="text-5xl text-center  ">
@@ -49,7 +49,7 @@ export const Workflow = () => {
                 whileInView={{ y: "calc(100% + 32px)" }}
                 transition={{
                   duration: 2,
-                  // delay: 0.5 + index * 1,
+                  delay: 2,
                   repeat: Infinity,
                   repeatDelay: 2,
                   ease: "easeInOut",
@@ -64,7 +64,7 @@ export const Workflow = () => {
                 whileInView={{ opacity: 1, y: "calc(100% + 32px)" }}
                 transition={{
                   duration: 2,
-                  // delay: 0.5 + index * 1,
+                  delay: 2,
                   repeat: Infinity,
                   repeatDelay: 2,
                   ease: "easeInOut",

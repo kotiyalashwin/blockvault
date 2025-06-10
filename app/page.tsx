@@ -3,6 +3,9 @@ import * as motion from "motion/react-client";
 import { HeroSection } from "@/components/herosection";
 import { Workflow } from "@/components/workflow";
 import Features from "@/components/features";
+import { FaqSection } from "@/components/faq";
+import Link from "next/link";
+import { X } from "lucide-react";
 
 export default function Home() {
   return (
@@ -14,20 +17,30 @@ export default function Home() {
           transition={{ duration: 1, delay: 1 }}
           className="absolute w-full h-full inset-0  hero-bg Z-0 "
         />
-
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.25, ease: "circIn", duration: 2 }}
           className="absolute inset-0 h-full w-full hero-gradient opacity-75 Z-10 "
         />
-        <div className="relative s ">
+        <div className="relative">
           {/* Hero */}
           <HeroSection />
           {/* workflow */}
           <Features />
           <Workflow />
+          <FaqSection />
         </div>
+      </div>
+      <div className="text-center text-xl bg-black/30 py-4">
+        Build by{" "}
+        <Link
+          target="_blank"
+          className="underline text-orange-400"
+          href={"https://x.com/ashwinntwt"}
+        >
+          Ashwin
+        </Link>
       </div>
     </>
   );
