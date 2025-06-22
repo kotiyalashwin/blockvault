@@ -44,8 +44,8 @@ export default function CustomConnectButton({ url }: { url: string }) {
       }
 
       toast.success("Transaction Saved");
-    } catch (error: any) {
-      toast.error(error?.messsage || "Failed to anchor to SOLANA");
+    } catch {
+      toast.error("Failed to anchor to SOLANA");
     } finally {
       setLoading(false);
     }

@@ -26,7 +26,7 @@ export const anchorHashToSolana = async (
       "confirmed"
     );
     return txnid;
-  } catch (e) {
+  } catch {
     // console.log(e);
     throw new Error("Failed to Anchor on SOLANA");
   }

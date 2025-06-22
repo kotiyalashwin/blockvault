@@ -5,7 +5,11 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import React from "react";
 
-export default async function ({ children }: { children: React.ReactNode }) {
+export default async function Layout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const session = await auth();
   if (!session) {
     console.log("No session");
