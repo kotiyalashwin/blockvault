@@ -12,7 +12,7 @@ export default async function SignIn() {
           <div className="flex flex-col justify-center w-full ">
             <Card className="items-center">
               <CardHeader className="w-full text-center">
-                <CardTitle>Let{`&apos`}s Get you In</CardTitle>
+                <CardTitle>Let&apos;s Get you In</CardTitle>
               </CardHeader>
               <CardContent>
                 <form

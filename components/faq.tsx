@@ -77,9 +77,9 @@ export const FaqSection = () => {
               How much does it cost to use BlockVault?
             </AccordionTrigger>
             <AccordionContent>
-              There{`&apos`}s a small fee for anchoring documents to cover
-              Solana network fees and platform maintenance. Watching tutorials
-              and verifying documents are free for users.
+              There&apos;s a small fee for anchoring documents to cover Solana
+              network fees and platform maintenance. Watching tutorials and
+              verifying documents are free for users.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

@@ -34,7 +34,7 @@ export default function FileForm() {
         console.error("File size exceeds 5MB");
         return;
       }
-      // const appURL = process.env.APP_BASE_API as string;
+      
 
       //get presigned url
       const preSigned = await axios.get(
