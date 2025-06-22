@@ -19,8 +19,8 @@ export default async function Layout({
   return (
     <div>
       <Toaster position="top-center" richColors />
-      <div className="absolute w-full z-10">
-        <ul className="flex justify-center space-x-4 pt-4">
+      <div className="absolute max-w-3xl w-full z-10 mt-8">
+        <ul className="flex justify-center space-x-4 underline decoration-orange-400 underline-offset-4">
           <li>
             <Link
               className="hover:bg-white/25  p-2  rounded-2xl transition-all ease-in-out"
@@ -37,7 +37,7 @@ export default async function Layout({
               Anchor Document
             </Link>
           </li>
-          <li>
+          <li className="hover:bg-white/25 px-2 rounded-2xl transition-all ease-in-out">
             <form>
               <button
                 className="flex items-center gap-2 cursor-pointer"
