@@ -36,7 +36,7 @@ export async function GET(req: NextRequest) {
     });
 
     const signedURL = await getSignedUrl(s3Client, upload, { expiresIn: 60 });
-    const fileUrl = `https://${process.env.AWS_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${key}`;
+    const fileUrl = `https://${process.env.AWS_BUCKET_NAME}.s3.${process.env.S3_REGION}.amazonaws.com/${key}`;
 
     return NextResponse.json({ signedURL: signedURL, fileUrl: fileUrl });
   } catch (e) {
