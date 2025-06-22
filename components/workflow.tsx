@@ -73,7 +73,7 @@ export const Workflow = () => {
             </div>
 
             {workingCards.map((card, i) => (
-              <div className="relative ">
+              <div className="relative " key={i}>
                 <WorkingCard
                   key={i}
                   delay={card.delay}
