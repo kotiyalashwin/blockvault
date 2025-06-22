@@ -1,4 +1,3 @@
-// app/dashboard/DocumentsList.tsx
 import { prisma } from "@/lib/db";
 
 import React from "react";
@@ -15,7 +14,7 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { File, Link2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { p } from "motion/react-client";
+import { div } from "motion/react-client";
 
 export default async function DocumentsList() {
   const session = await auth();
@@ -46,7 +45,12 @@ export default async function DocumentsList() {
               </CardTitle>
               <CardContent>
                 {documents.length === 0 ? (
-                  <p className="text-center">No documents </p>
+                  <div className="flex flex-col items-center space-y-4">
+                    <p className="text-center text-lg">No documents </p>
+                    <Link href={"/upload"}>
+                      <Button className="md:min-w-2xl">Upload Now</Button>
+                    </Link>
+                  </div>
                 ) : (
                   <Table>
                     <TableHeader>

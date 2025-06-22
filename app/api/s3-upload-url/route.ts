@@ -19,7 +19,6 @@ export async function GET(req: NextRequest) {
   try {
     //get the file extention like .txt/.pdf/.docx etc etc
     const [name, fileExt] = filename.split(".");
-    const random = randomUUID();
     // console.log(random);
 
     //uniquely identify the file

@@ -8,9 +8,10 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
+import { Loader } from "lucide-react";
 
 export default function FileForm() {
-  const [isPending, startTransition] = useTransition();
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   const [presigned, setPresigned] = useState<string>("");
   const filRef = useRef<HTMLInputElement | null>(null);
@@ -20,6 +21,7 @@ export default function FileForm() {
   const handleFileUpload = async (e: FormEvent) => {
     e.preventDefault();
     setError(false);
+    setIsLoading(true);
     try {
       const file = filRef.current?.files?.[0];
       //file checks
@@ -65,6 +67,8 @@ export default function FileForm() {
     } catch (e) {
       console.log(e);
       setError(true);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -85,8 +89,8 @@ export default function FileForm() {
           <Input type="file" ref={filRef} />
         </div>
         <div className="flex gap-2">
-          <Button disabled={isPending} type="submit">
-            Upload
+          <Button disabled={isLoading} type="submit">
+            {isLoading ? <Loader className="animate-spin" /> : "Upload"}
           </Button>
           {!error && presigned && redirectURL && (
             <Button

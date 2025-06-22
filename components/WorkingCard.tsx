@@ -20,13 +20,15 @@ export const WorkingCard = ({
       transition={{ delay: delay ?? 0 }}
       className={`flex justify-${flex} px-8    `}
     >
-      <div className=" p-8 w-[50%] max-w-3xl flex flex-col gap-4 rounded-lg">
+      <div className=" p-8 w-[50%] max-w-3xl flex items-center flex-col gap-4 rounded-lg">
         <h1 className="text-2xl text-center">
           {" "}
           <span className="text-orange-400">#</span>
           {title}
         </h1>
-        <p className="text-neutral-400  text-center">{description}</p>
+        <p className="text-neutral-400 hidden md:block  text-center w-[65%]">
+          {description}
+        </p>
       </div>
     </motion.div>
   );

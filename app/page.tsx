@@ -5,7 +5,6 @@ import { Workflow } from "@/components/workflow";
 import Features from "@/components/features";
 import { FaqSection } from "@/components/faq";
 import Link from "next/link";
-import { X } from "lucide-react";
 
 export default function Home() {
   return (
@@ -32,7 +31,7 @@ export default function Home() {
           <FaqSection />
         </div>
       </div>
-      <div className="text-center text-xl bg-black/30 py-4">
+      <div className="sticky inset-0 text-center text-xl bg-black/30 py-4">
         Build by{" "}
         <Link
           target="_blank"
