@@ -5,14 +5,12 @@ import "./globals.css";
 import { Providers } from "@/components/providers";
 
 const instrumentSerif = Instrument_Serif({
-  // variable: "--font-instrument-serif",
   subsets: ["latin"],
   display: "swap",
   weight: "400"
 });
 
 const inter = Inter({
-  // variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
@@ -20,13 +18,13 @@ const inter = Inter({
 const sourceSerif4 = Source_Serif_4({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "700"], // Add weights as needed
+  weight: ["400", "700"], 
 });
 
 const ptSerif = PT_Serif({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "700"], // Add weights as needed
+  weight: ["400", "700"], 
 });
 
 const barlow = Barlow({
@@ -55,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className}`}
+        // className={`${inter.className}`}
       >
         <Providers>
           <main>{children}</main>

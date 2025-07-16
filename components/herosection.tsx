@@ -2,7 +2,7 @@ import * as motion from "motion/react-client";
 import { Button } from "./ui/button";
 import { Lock } from "lucide-react";
 import Link from "next/link";
-import { Barlow, Instrument_Serif, Space_Mono } from "next/font/google";
+import { Instrument_Serif, Space_Mono } from "next/font/google";
 
 
 
@@ -12,7 +12,6 @@ const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"] });
 export const HeroSection = () => {
   return (
     <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
-      {/* Background Lock Icon */}
       <div className="absolute inset-0 z-0 flex items-center justify-center opacity-5">
         <Lock
           absoluteStrokeWidth
@@ -21,9 +20,8 @@ export const HeroSection = () => {
         />
       </div>
 
-      {/* Main Content Container */}
       <div className="relative z-10 mx-auto flex h-full max-w-4xl flex-col items-center justify-center p-8 text-center">
-        {/* Top Banner */}
+   
         <motion.p
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,7 +31,7 @@ export const HeroSection = () => {
           Please enable Devnet Mode in Wallets
         </motion.p>
 
-        {/* Logo/Tagline */}
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -43,7 +41,7 @@ export const HeroSection = () => {
           BlockVault
         </motion.div>
 
-        {/* Main Heading */}
+
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,7 +53,6 @@ export const HeroSection = () => {
           Prove Authenticity.
         </motion.h1>
 
-        {/* Sub-heading/Description */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

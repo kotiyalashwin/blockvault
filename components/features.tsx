@@ -1,137 +1,138 @@
 import * as motion from "motion/react-client";
-import { Instrument_Serif } from "next/font/google"; // Assuming these are used elsewhere or for consistency
-import { ReactNode } from "react";
+import { Instrument_Serif } from "next/font/google";
 
-// Initialize fonts
+
+
+// Load Google Font
 const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: "400" });
 
-
+// ✅ FeatureCard component with outlined number
 interface FeatureCardProps {
-  number: string | number;
+  number: string;
   title: string;
-  description: string | ReactNode;
+  description: React.ReactNode;
 }
+const FeatureCard = ({ number, title, description }: FeatureCardProps) => {
+  return (
+    <div className="relative w-full px-4 py-8 drop-shadow-2xl drop-shadow-orange-400 md:px-10 md:py-12 lg:w-[450px]">
+      {/* Large background number with gradient + stroke */}
+      <div
+  className="absolute text-7xl md:text-9xl font-extrabold text-transparent bg-clip-text"
+  style={{
+    top: "0.5rem",
+    left: "1rem",
+    WebkitTextStrokeWidth: "2px",
+    WebkitTextStrokeColor: "#b86404",
+    WebkitBackgroundClip: "text", 
+   
+    backgroundImage: "linear-gradient(to bottom, rgba(85,39,7,1) 5%, rgba(85,39,7,0) 100%)",
+    maskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
+    WebkitMaskImage: "linear-gradient(to bottom, black 20%, transparent 100%)",
+    maskSize: "100% 100%",
+    maskRepeat: "no-repeat",
+  }}
+>
+  {number}
+</div>
 
 
-// Main Features Component
+      {/* Title */}
+      <h2 className="absolute top-12 left-10 text-xl md:text-2xl font-bold uppercase text-white md:top-18">
+        {title}
+      </h2>
+
+      {/* Description */}
+      <p
+        className="absolute top-20 md:top-28 left-10 w-[65%] md:w-[70%] text-sm md:text-base text-zinc-300"
+        style={{
+          textShadow: "2px 2px 6px rgba(0, 0, 0, 0.4)",
+        }}
+      >
+        {description}
+      </p>
+    </div>
+  );
+};
+
+// ✅ Main Features section
 export default function Features() {
   return (
-    // Main container for the Features section
-    // Sets full screen height, centers content, applies background and text colors, and adds responsive padding
-    <div className="flex min-h-screen w-full flex-col items-center justify-center bg-zinc-950 px-4 py-16 text-white md:px-8 ">
-      {/* Main Heading */}
-      {/* Animates in with opacity and slight Y-axis movement when in view */}
+    <div className="flex min-h-screen w-full flex-col items-center justify-center px-4 py-16 text-white md:px-8 mb-28">
+      {/* Heading */}
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        viewport={{ once: true, amount: 0.5 }} // Animates only once when 50% of the element is in view
+        viewport={{ once: true, amount: 0.5 }}
         className={`${instrumentSerif.className} mb-16 text-center text-4xl leading-tight md:text-5xl drop-shadow-2xl drop-shadow-orange-400`}
       >
         A{" "}
-        {/* Animated span for "SMARTER WAY" with blur and opacity effect */}
         <motion.span
-          initial={{ filter: "blur(10px)", opacity: 0 }}
-          whileInView={{ filter: "blur(0px)", opacity: 1 }}
-          transition={{ duration: 0.75, delay: 0.3 }}
-          viewport={{ once: true, amount: 0.5 }}
-          className="text-orange-400 "
+          initial={{ filter: "blur(10px)" }}
+          whileInView={{ filter: "blur(0px)" }}
+          transition={{ duration: 0.75, delay: 0.5 }}
+          className="text-orange-400"
         >
           Smarter Way
         </motion.span>{" "}
         TO SECURE YOUR DOCUMENTS
       </motion.h1>
 
-      {/* Features List - Adjusted for alternating flow */}
-      {/* Uses flex-col for stacking and increased gap for visual separation */}
-      <div className="flex w-full flex-col items-center gap-24 md:max-w-6xl ">
-        {/* Feature 1 Wrapper: Aligns card to the left on larger screens */}
+      {/* Features List */}
+      <div className="flex w-full flex-col items-center gap-24 md:max-w-6xl">
+        {/* Feature 1 - Left */}
         <motion.div
-          initial={{ x: -100, opacity: 0 }} // Initial animation from left
-          whileInView={{ x: 0, opacity: 1 }} // Animates to position
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.75, delay: 0.3 }}
           viewport={{ once: true, amount: 0.5 }}
-          className="flex w-full justify-start" // Flex container to align the card
+          className="flex w-full justify-start"
         >
           <FeatureCard
             number="1"
             title="SECURED"
-            description="Tamper-free document protection using cryptographic hashes and digital signatures."
-            // 'delay' and 'direction' props are now handled by the outer motion.div
+            description="Tamper-free document protection using hashes and signatures"
           />
         </motion.div>
 
-        {/* Feature 2 Wrapper: Aligns card to the right on larger screens */}
+        {/* Feature 2 - Right */}
         <motion.div
-          initial={{ x: 100, opacity: 0 }} // Initial animation from right
-          whileInView={{ x: 0, opacity: 1 }} // Animates to position
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.75, delay: 0.6 }}
           viewport={{ once: true, amount: 0.5 }}
-          className="flex w-full justify-end" // Flex container to align the card
+          className="flex w-full justify-end"
         >
           <FeatureCard
             number="2"
             title="ON-CHAIN"
             description={
-              // Using a React Fragment for multi-part description with inline styling
               <>
-                Leveraging{" "}
-                <span className="font-bold tracking-widest underline decoration-orange-400 underline-offset-4 decoration-2">
+                Using{" "}
+                <span className="tracking-widest underline decoration-orange-400 underline-offset-2 decoration-2">
                   SOLANA
                 </span>{" "}
-                for transparent and immutable transaction visibility.
+                such that all transactions are visible.
               </>
             }
           />
         </motion.div>
 
-        {/* Feature 3 Wrapper: Aligns card to the left on larger screens */}
+        {/* Feature 3 - Left */}
         <motion.div
-          initial={{ x: -100, opacity: 0 }} // Initial animation from left
-          whileInView={{ x: 0, opacity: 1 }} // Animates to position
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.75, delay: 0.9 }}
           viewport={{ once: true, amount: 0.5 }}
-          className="flex w-full justify-start" // Flex container to align the card
+          className="flex w-full justify-start"
         >
           <FeatureCard
             number="3"
             title="VALIDITY"
-            description="Effortlessly validate a document's authenticity by tracking its unique signer on the blockchain."
+            description="Validate a document by tracking its signer"
           />
         </motion.div>
       </div>
     </div>
   );
 }
-
-// Reusable Feature Card Component
-// Props: number (e.g., "1"), title (e.g., "SECURED"), description (text or JSX)
-const FeatureCard: React.FC<FeatureCardProps> = ({ number, title, description }) => {
-  return (
-    // Styling for the card: rounded corners, border, background, padding, shadow, and backdrop blur
-    // Added responsive width classes to allow for alternating layout on larger screens
-    <div
-      className="relative flex w-full flex-col items-start rounded-xl border border-zinc-800 bg-zinc-900/50 p-8 shadow-lg backdrop-blur-sm md:w-2/3 lg:w-1/2"
-    >
-      {/* Large background number as a subtle visual element */}
-      {/* Uses gradient text clip for a faded, branded look */}
-      <div className="absolute -top-4 -left-4 text-9xl font-extrabold text-transparent opacity-10 md:text-[10rem]">
-        <span className="bg-gradient-to-br from-orange-500 to-amber-600 bg-clip-text">
-          {number}
-        </span>
-      </div>
-
-      {/* Feature Title */}
-      {/* Positioned relatively to ensure it's above the background number */}
-      <h2 className="relative z-10 mb-2 text-2xl font-bold uppercase tracking-wide text-orange-400">
-        {title}
-      </h2>
-
-      {/* Feature Description */}
-      {/* Positioned relatively to ensure it's above the background number */}
-      <p className="relative z-10 text-base text-zinc-300">
-        {description}
-      </p>
-    </div>
-  );
-};

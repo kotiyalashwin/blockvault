@@ -47,14 +47,6 @@ export default function Home() {
         >
           <span>Ashwin </span>
         </Link>
-        <span>& </span>
-        <Link
-          target="_blank"
-          className="underline text-orange-400"
-          href={"https://x.com/bikash1376"}
-        >
-          <span>Bikash</span>
-        </Link>
         
       </div>
     </>

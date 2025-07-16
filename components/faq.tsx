@@ -60,11 +60,8 @@ const faqItems = [
 
 export const FaqSection = () => {
   return (
-    // Main container for the FAQ section
-    // Sets minimum screen height, centers content, applies background and text colors, and adds responsive padding
-    <div className="flex min-h-screen w-full flex-col items-center justify-center px-4 py-16 text-white md:px-8">
-      {/* Main Heading */}
-      {/* Animates in with opacity and slight Y-axis movement when in view */}
+      <div className="flex min-h-screen w-full flex-col items-center justify-center px-4 py-16 text-white md:px-8">
+  
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -73,10 +70,9 @@ export const FaqSection = () => {
         className={`${instrumentSerif.className} mb-16 text-center text-4xl leading-tight md:text-5xl drop-shadow-2xl drop-shadow-orange-400`}
       >
         <motion.span
-          initial={{ filter: "blur(10px)", opacity: 0 }}
-          whileInView={{ filter: "blur(0px)", opacity: 1 }}
-          transition={{ duration: 0.75, delay: 0.3 }}
-          viewport={{ once: true, amount: 0.5 }}
+          initial={{ filter: "blur(10px)" }}
+          whileInView={{ filter: "blur(0px)" }}
+          transition={{ duration: 0.75, delay: 0.5 }}
           className="text-orange-400"
         >
           FAQs
