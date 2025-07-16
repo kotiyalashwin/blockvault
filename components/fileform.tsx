@@ -9,6 +9,13 @@ import { Label } from "./ui/label";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 import { Loader } from "lucide-react";
+import { PT_Serif } from "next/font/google";
+import { Inter } from "next/font/google";
+import { Space_Mono } from "next/font/google";
+
+const ptSerif = PT_Serif({ subsets: ["latin"], weight: ["400", "700"] });
+const inter = Inter({ subsets: ["latin"] });
+const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function FileForm() {
   const [isLoading, setIsLoading] = useState(false);
@@ -84,6 +91,9 @@ export default function FileForm() {
         onSubmit={handleFileUpload}
         className="flex flex-col items-center gap-4"
       >
+        <h2 className={`${ptSerif.className} text-2xl font-semibold mb-4`}>
+          Upload Your Document
+        </h2>
         <div className="flex flex-col gap-4">
           <Label className="w-full">Choose your file:</Label>
           <Input type="file" ref={filRef} />
@@ -105,6 +115,11 @@ export default function FileForm() {
           )}
         </div>
         {error && <p className="text-red-400">Some Error Occured</p>}
+        <div className="mt-4">
+          <span className={`${spaceMono.className} text-xs text-gray-500`}>
+            File hash: 0x1234abcd...
+          </span>
+        </div>
       </form>
     </Card>
     // </>

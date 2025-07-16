@@ -5,6 +5,13 @@ import { Workflow } from "@/components/workflow";
 import Features from "@/components/features";
 import { FaqSection } from "@/components/faq";
 import Link from "next/link";
+import { Space_Mono } from "next/font/google";
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400"],
+});
 
 export default function Home() {
   return (
@@ -31,15 +38,24 @@ export default function Home() {
           <FaqSection />
         </div>
       </div>
-      <div className="sticky inset-0 text-center text-xl bg-black/30 py-4">
-        Build by{" "}
+      <div className={`sticky inset-0 text-center text-sm ${spaceMono.className} opacity-60 bg-black/30 py-4`}>
+        Built by{" "}
         <Link
           target="_blank"
           className="underline text-orange-400"
           href={"https://x.com/ashwinntwt"}
         >
-          Ashwin
+          <span>Ashwin </span>
         </Link>
+        <span>& </span>
+        <Link
+          target="_blank"
+          className="underline text-orange-400"
+          href={"https://x.com/bikash1376"}
+        >
+          <span>Bikash</span>
+        </Link>
+        
       </div>
     </>
   );
