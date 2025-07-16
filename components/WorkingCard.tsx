@@ -1,12 +1,7 @@
 import * as motion from "motion/react-client";
-import { Inter, Source_Serif_4 } from "next/font/google";
+import {Source_Serif_4 } from "next/font/google";
 
 
-const inter = Inter({
-  // variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
 const sourceSerif4 = Source_Serif_4({
   subsets: ["latin"],
   weight: ["400", "700"],

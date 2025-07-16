@@ -4,7 +4,6 @@ import { Instrument_Serif } from "next/font/google";
 
 
 const instrumentSerif = Instrument_Serif({
-  // variable: "--font-instrument-serif",
   subsets: ["latin"],
   display: "swap",
   weight: "400"

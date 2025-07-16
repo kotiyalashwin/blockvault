@@ -4,7 +4,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "./ui/accordion"; // Assuming these are shadcn/ui components
+} from "./ui/accordion"; 
 
 import { Instrument_Serif, Source_Serif_4, Space_Mono } from "next/font/google";
 import { Inter } from "next/font/google";

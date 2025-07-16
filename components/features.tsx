@@ -1,10 +1,10 @@
 import * as motion from "motion/react-client";
-import { Instrument_Serif, Space_Mono } from "next/font/google"; // Assuming these are used elsewhere or for consistency
+import { Instrument_Serif } from "next/font/google"; // Assuming these are used elsewhere or for consistency
 import { ReactNode } from "react";
 
 // Initialize fonts
 const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: "400" });
-const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"] }); // Kept for consistency if used elsewhere
+
 
 interface FeatureCardProps {
   number: string | number;

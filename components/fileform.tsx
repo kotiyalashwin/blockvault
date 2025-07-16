@@ -1,7 +1,7 @@
 "use client";
 
 import axios from "axios";
-import { FormEvent, useRef, useState, useTransition } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { toast } from "sonner";
 import { Card, CardHeader, CardTitle } from "./ui/card";
 import { Input } from "./ui/input";
@@ -10,11 +10,10 @@ import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 import { Loader } from "lucide-react";
 import { PT_Serif } from "next/font/google";
-import { Inter } from "next/font/google";
 import { Space_Mono } from "next/font/google";
 
 const ptSerif = PT_Serif({ subsets: ["latin"], weight: ["400", "700"] });
-const inter = Inter({ subsets: ["latin"] });
+
 const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function FileForm() {

@@ -2,33 +2,10 @@ import * as motion from "motion/react-client";
 import { Button } from "./ui/button";
 import { Lock } from "lucide-react";
 import Link from "next/link";
-import { Barlow, Instrument_Serif, Inter, PT_Serif, Source_Serif_4, Space_Mono } from "next/font/google";
+import { Barlow, Instrument_Serif, Space_Mono } from "next/font/google";
 
 
 
-const inter = Inter({
-  // variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const sourceSerif4 = Source_Serif_4({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "700"], // Add weights as needed
-});
-
-const ptSerif = PT_Serif({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "700"], // Add weights as needed
-});
-
-const barlow = Barlow({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "700"],
-});
 const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: "400" });
 const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"] });
 
