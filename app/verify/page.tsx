@@ -163,7 +163,7 @@ export default function VerifyPage() {
         )}
         <div className="text-center mt-16">
           <p className="text-gray-500">
-            Build by{" "}
+            Built by{" "}
             <Link href={"https://x.com/ashwinntwt"}>
               <span className="text-orange-400 font-semibold">ASHWIN</span>
             </Link>

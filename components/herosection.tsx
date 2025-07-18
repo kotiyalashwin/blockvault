@@ -2,51 +2,82 @@ import * as motion from "motion/react-client";
 import { Button } from "./ui/button";
 import { Lock } from "lucide-react";
 import Link from "next/link";
+import { Instrument_Serif, Space_Mono } from "next/font/google";
+
+
+
+const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: "400" });
+const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"] });
+
 export const HeroSection = () => {
   return (
-    <div>
-      <div className="relative w-full h-screen flex items-center justify-center">
-        <div className="absolute w-full inset-0 flex items-center justify-center opacity-10 text-neutral-500  pointer-events-none">
-          <Lock absoluteStrokeWidth size={800} />{" "}
-          {/* Use the Lucide Lock icon */}
-        </div>
-        <div className="max-w-7xl h-screen flex flex-col justify-center ">
-          {/* <motion.div
-            initial={{ y: 10, opacity: 0, filter: "blur(10px)" }}
-            animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-            transition={{ delay: 1 }}
-            className="  flex justify-center mt-4 "
-          >
-            <div className=" flex justify-evenly  py-4 w-[55%] rounded-2xl">
-              <p>Home</p>
-              <p>About</p>
-              <p>Info</p>
-            </div>
-          </motion.div> */}
-          <motion.div
-            initial={{ filter: "blur(10px)" }}
-            animate={{ filter: "blur(0px)" }}
-            transition={{ ease: "easeIn", duration: 0.25 }}
-            className="h-full flex flex-col items-center justify-center gap-8"
-          >
-            <p className="border animate-pulse border-orange-400 rounded-lg px-2 py-1 bg-amber-600/20 text-orange-400">
-              Please enable Devnet Mode in Wallets
-            </p>
-            <h1 className="text-neutral-400 text-center ">#securedocs</h1>
-            <h1 className="text-5xl text-center ">
-              Anchor Documents. Prove Authenticity.
-            </h1>
-            <p className="mt-8 text-lg text-neutral-300 text-center">
-              Secure your most important files on the Solana blockchain.
-            </p>
-            <Button
-              variant={"outline"}
-              className="mt-4 text-orange-400 text-lg repeat-2"
+    <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-5">
+        <Lock
+          absoluteStrokeWidth
+          size={800}
+          className="animate-pulse text-zinc-400/10"
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto flex h-full max-w-4xl flex-col items-center justify-center p-8 text-center">
+   
+        <motion.p
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="mb-8 rounded-full border border-orange-500 bg-orange-400/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-orange-400"
+        >
+          Please enable Devnet Mode in Wallets
+        </motion.p>
+
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          className="mb-4 text-sm font-medium uppercase tracking-widest text-zinc-500"
+        >
+          BlockVault
+        </motion.div>
+
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          className={`${instrumentSerif.className} text-5xl font-normal leading-tight md:text-7xl`}
+        >
+          Anchor Documents.
+          <br />
+          Prove Authenticity.
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="mt-6 max-w-xl text-lg text-zinc-400 md:text-xl"
+        >
+          Secure your most important files on the Solana blockchain.
+        </motion.p>
+
+        {/* Call-to-Action Button */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1, duration: 0.5, type: "spring" }}
+          className="mt-12"
+        >
+          <Button className="group relative rounded-full border-2 border-orange-500 bg-gradient-to-r from-orange-500/20 to-amber-500/20 px-8 py-3 text-lg font-bold text-orange-400 transition-all duration-300 hover:from-orange-500/30 hover:to-amber-500/30 hover:shadow-[0_0_20px_rgba(251,146,60,0.5)]">
+            <Link
+              href="/upload"
+              className={`${spaceMono.className} relative z-10 transition-colors duration-300 group-hover:text-orange-300`}
             >
-              <Link href="/upload">Secure now</Link>
-            </Button>
-          </motion.div>
-        </div>
+              Secure Now
+            </Link>
+          </Button>
+        </motion.div>
       </div>
     </div>
   );

@@ -1,4 +1,11 @@
 import * as motion from "motion/react-client";
+import {Source_Serif_4 } from "next/font/google";
+
+
+const sourceSerif4 = Source_Serif_4({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 type WorkingCardProps = {
   title: string;
@@ -21,9 +28,9 @@ export const WorkingCard = ({
       className={`flex justify-${flex} px-8    `}
     >
       <div className=" p-8 w-[50%] max-w-3xl flex items-center flex-col gap-4 rounded-lg">
-        <h1 className="text-2xl text-center">
+        <h1 className={`text-2xl text-center  ${sourceSerif4.className}`}>
           {" "}
-          <span className="text-orange-400">#</span>
+          <span className={`text-orange-400`}></span>
           {title}
         </h1>
         <p className="text-neutral-400 hidden md:block  text-center w-[65%]">
